@@ -6,4 +6,7 @@ function subtract(num1, num2) {
   return num1 - num2;
 }
 
-console.log(subtract(5, 2));
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+console.log(multiply(5, 5));
