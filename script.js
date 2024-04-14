@@ -17,4 +17,9 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
   return num1 / num2;
 }
-console.log(divide(10, 5));
+
+function operate(num1, num2, operator) {
+  return operator(num1, num2);
+}
+
+console.log(operate(5, 5, multiply));
