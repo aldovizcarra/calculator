@@ -17,7 +17,23 @@ button {
 }
 
 input {
-  /* border: none; */
+  border: none;
   outline: none;
   background-color: #191f31;
+}
+
+main {
+  display: grid;
+  place-content: center;
+}
+
+.calculator {
+  background-color: #3b4664;
+  border: 2px solid red;
+  padding: 1rem;
+}
+
+.buttons {
+  background-color: #262d44;
+  padding: 1rem;
 }
