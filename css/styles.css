@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  /* border: none; */
+  outline: none;
+  background-color: #191f31;
+}
