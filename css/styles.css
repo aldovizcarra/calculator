@@ -36,4 +36,6 @@ input {
 .buttons {
   background-color: #262d44;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
