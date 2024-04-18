@@ -43,17 +43,36 @@ input {
 
 .buttons {
   background-color: #262d44;
-  color: #4f5058;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 0.8rem;
+  border-radius: 8px;
 }
 
 .buttons > * {
   padding: 1rem;
   font-weight: 700;
   font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.number,
+.operator,
+.point {
+  color: #4f5058;
+  background-color: #eae7de;
+}
+
+.delete,
+.reset,
+.equals {
+  color: #fff;
+}
+
+.delete,
+.reset {
+  background-color: #627095;
 }
 
 .reset {
@@ -62,4 +81,5 @@ input {
 
 .equals {
   grid-column: 3 / span 2;
+  background-color: #ce3e34;
 }
