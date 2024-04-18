@@ -28,7 +28,8 @@ input {
   display: grid;
   grid-template-columns: 1fr;
   background-color: #3b4664;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+  gap: 1.2rem;
 }
 
 .calculator > * {
