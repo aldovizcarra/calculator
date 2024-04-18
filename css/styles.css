@@ -23,6 +23,7 @@ button {
 input {
   background-color: #191f31;
   padding: 1.5rem;
+  border: none;
 }
 
 .calculator {
