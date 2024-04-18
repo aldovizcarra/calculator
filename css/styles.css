@@ -62,6 +62,7 @@ input {
 .point {
   color: #4f5058;
   background-color: #eae7de;
+  box-shadow: 0 3px 0 0 #bbaca5;
 }
 
 .delete,
@@ -73,6 +74,7 @@ input {
 .delete,
 .reset {
   background-color: #627095;
+  box-shadow: 0 3px 0 0 #425072;
 }
 
 .reset {
@@ -82,4 +84,5 @@ input {
 .equals {
   grid-column: 3 / span 2;
   background-color: #ce3e34;
+  box-shadow: 0 3px 0 0 #882b27;
 }
