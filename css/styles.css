@@ -14,6 +14,7 @@ body {
 
 button {
   display: inline-block;
+  border: none;
   cursor: pointer;
 }
 
@@ -38,4 +39,9 @@ input {
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.buttons > * {
+  padding: 1rem;
 }
