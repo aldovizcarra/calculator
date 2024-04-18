@@ -11,6 +11,7 @@ body {
   display: grid;
   place-content: center;
   font-family: "League Spartan", sans-serif;
+  background-color: #f0f0f0;
 }
 
 button {
