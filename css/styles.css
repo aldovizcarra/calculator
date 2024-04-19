@@ -23,12 +23,12 @@ button {
 
 input {
   background-color: #191f31;
-  padding: 1.5rem;
+  padding: 1rem;
   border: none;
   border-radius: 8px;
   color: #fff;
   text-align: end;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-family: "League Spartan", sans-serif;
 }
 
@@ -57,7 +57,7 @@ input {
 .buttons > * {
   padding: 1rem;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 5px;
 }
 
@@ -113,4 +113,15 @@ input {
   background-color: #882b27;
   box-shadow: 0 0 0 0 #882b27;
   transform: translateY(2px);
+}
+
+@media screen and (min-width: 500px) {
+  input {
+    padding: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .buttons > * {
+    font-size: 1.5rem;
+  }
 }
