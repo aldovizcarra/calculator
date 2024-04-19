@@ -26,6 +26,10 @@ input {
   padding: 1.5rem;
   border: none;
   border-radius: 8px;
+  color: #fff;
+  text-align: end;
+  font-size: 2.5rem;
+  font-family: "League Spartan", sans-serif;
 }
 
 .calculator {
