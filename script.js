@@ -2,7 +2,7 @@ let num1;
 let num2;
 let operator;
 const btns = document.querySelectorAll(".buttons > *");
-const input = document.querySelector("#display");
+const display = document.querySelector("#display");
 
 function add(num1, num2) {
   return num1 + num2;
@@ -27,6 +27,10 @@ function operate(num1, num2, operator) {
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const btnValue = e.target.textContent;
-    console.log(btnValue);
+    updateDisplay(btnValue);
   });
 });
+
+function updateDisplay(btnValue) {
+  display.value += btnValue;
+}
