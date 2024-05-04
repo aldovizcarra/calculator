@@ -27,10 +27,17 @@ function operate(num1, num2, operator) {
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const btnValue = e.target.textContent;
-    updateDisplay(btnValue);
+    const btnClass = e.target.getAttribute("class");
+    updateDisplay(btnValue, btnClass);
   });
 });
 
-function updateDisplay(btnValue) {
-  display.value += btnValue;
+function updateDisplay(btnValue, btnClass) {
+  if (btnClass === "operator") {
+    operator = btnValue;
+    num1 = display.value.slice(0, -1);
+    display.value = "";
+  } else {
+    display.value += btnValue;
+  }
 }
