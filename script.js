@@ -36,14 +36,13 @@ function updateDisplay(btnValue, btnClass) {
   if (btnClass === "operator" && operator) {
     getOperator();
     display.value = operate(num1, num2, operator);
-  }
-  if (btnClass === "operator") {
+  } else if (btnClass === "operator") {
     operator = btnValue;
-    num1 = display.value.slice(0, -1);
+    num1 = parseInt(display.value);
     display.value = "";
   } else if (operator) {
     display.value += btnValue;
-    num2 = display.value;
+    num2 = parseInt(display.value);
   } else {
     display.value += btnValue;
   }
@@ -52,16 +51,16 @@ function updateDisplay(btnValue, btnClass) {
 function getOperator() {
   switch (operator) {
     case "+":
-      operator = add(num1, num2);
+      operator = add;
       break;
     case "-":
-      operator = subtract(num1, num2);
+      operator = subtract;
       break;
     case "x":
-      operator = multiply(num1, num2);
+      operator = multiply;
       break;
     case "/":
-      operator = divide(num1, num2);
+      operator = divide;
       break;
   }
 }
