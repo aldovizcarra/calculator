@@ -37,7 +37,12 @@ btns.forEach((btn) => {
 });
 
 function updateDisplay(btnValue, btnClass) {
-  if (btnClass === "equals") {
+  if (btnClass === "reset") {
+    display.value = "0";
+    num1 = "";
+    num2 = "";
+    operator = "";
+  } else if (btnClass === "equals") {
     getOperator();
     display.value = operate(num1, num2, operator);
     num1 = "";
