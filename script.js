@@ -3,6 +3,7 @@ let num2;
 let operator;
 const btns = document.querySelectorAll(".buttons > *");
 const display = document.querySelector("#display");
+display.value = "0";
 
 function add(num1, num2) {
   return num1 + num2;
@@ -33,16 +34,32 @@ btns.forEach((btn) => {
 });
 
 function updateDisplay(btnValue, btnClass) {
-  if (btnClass === "operator" && operator) {
+  if (btnClass === "equals") {
     getOperator();
     display.value = operate(num1, num2, operator);
+    num1 = "";
+    num2 = "";
+    operator = "";
+  } else if (btnClass === "operator" && operator) {
+    getOperator();
+    display.value = operate(num1, num2, operator);
+    num1 = display.value;
+    num2 = "";
+    operator = "";
   } else if (btnClass === "operator") {
     operator = btnValue;
     num1 = parseInt(display.value);
-    display.value = "";
-  } else if (operator) {
+  } else if (num2) {
     display.value += btnValue;
     num2 = parseInt(display.value);
+  } else if (operator) {
+    display.value = "";
+    display.value += btnValue;
+    num2 = parseInt(display.value);
+  } else if (!num1) {
+    display.value = "";
+    display.value += btnValue;
+    num1 = display.value;
   } else {
     display.value += btnValue;
   }
