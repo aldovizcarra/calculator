@@ -43,9 +43,9 @@ function updateDisplay(btnValue, btnClass) {
   } else if (btnClass === "operator" && operator) {
     getOperator();
     display.value = operate(num1, num2, operator);
-    num1 = display.value;
+    num1 = parseInt(display.value);
     num2 = "";
-    operator = "";
+    operator = btnValue;
   } else if (btnClass === "operator") {
     operator = btnValue;
     num1 = parseInt(display.value);
