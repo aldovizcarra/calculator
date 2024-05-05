@@ -18,6 +18,9 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
+  if (num2 === 0) {
+    return "THIS IS NOT A NUMBER";
+  }
   return num1 / num2;
 }
 
