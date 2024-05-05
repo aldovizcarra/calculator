@@ -30,13 +30,14 @@ function operate(num1, num2, operator) {
 
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    const btn = e.target;
     const btnValue = e.target.textContent;
     const btnClass = e.target.getAttribute("class");
-    updateDisplay(btnValue, btnClass);
+    updateDisplay(btn, btnValue, btnClass);
   });
 });
 
-function updateDisplay(btnValue, btnClass) {
+function updateDisplay(btn, btnValue, btnClass) {
   if (btnClass === "reset") {
     display.value = "0";
     num1 = "";
