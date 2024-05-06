@@ -26,21 +26,20 @@ function divide(num1, num2) {
 }
 
 function operate(num1, num2, operator) {
-  return operator(num1, num2);
+  return operator(parseFloat(num1), parseFloat(num2));
 }
 
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    const btn = e.target;
     const btnValue = e.target.textContent;
     const btnClass = e.target.getAttribute("class");
-    updateDisplay(btn, btnValue, btnClass);
+    updateDisplay(btnValue, btnClass);
   });
 });
 
-function updateDisplay(btn, btnValue, btnClass) {
+function updateDisplay(btnValue, btnClass) {
   if (btnClass === "point") {
-    btn.disabled = true;
+    point.disabled = true;
   }
   if (btnClass === "reset") {
     getReset();
@@ -49,19 +48,29 @@ function updateDisplay(btn, btnValue, btnClass) {
   } else if (btnClass === "operator" && operator) {
     getOperator();
     display.value = operate(num1, num2, operator);
-    num1 = parseFloat(display.value);
+    // num1 = parseFloat(display.value);
+    num1 = display.value;
     num2 = "";
     operator = btnValue;
+    point.disabled = false;
+  } else if (btnClass === "point" && operator) {
+    display.value = "";
+    display.value += btnValue;
+    num2 = display.value;
   } else if (btnClass === "operator") {
     operator = btnValue;
-    num1 = parseFloat(display.value);
+    // num1 = parseFloat(display.value);
+    num1 = display.value;
+    point.disabled = false;
   } else if (num2) {
     display.value += btnValue;
-    num2 = parseFloat(display.value);
+    // num2 = parseFloat(display.value);
+    num2 = display.value;
   } else if (operator) {
     display.value = "";
     display.value += btnValue;
-    num2 = parseFloat(display.value);
+    // num2 = parseFloat(display.value);
+    num2 = display.value;
   } else if (!num1) {
     display.value = "";
     display.value += btnValue;
@@ -76,6 +85,7 @@ function getReset() {
   num1 = "";
   num2 = "";
   operator = "";
+  point.disabled = false;
 }
 
 function getEqual() {
@@ -84,6 +94,7 @@ function getEqual() {
   num1 = "";
   num2 = "";
   operator = "";
+  point.disabled = false;
 }
 
 function getOperator() {
