@@ -39,16 +39,9 @@ btns.forEach((btn) => {
 
 function updateDisplay(btn, btnValue, btnClass) {
   if (btnClass === "reset") {
-    display.value = "0";
-    num1 = "";
-    num2 = "";
-    operator = "";
+    getReset();
   } else if (btnClass === "equals") {
-    getOperator();
-    display.value = operate(num1, num2, operator);
-    num1 = "";
-    num2 = "";
-    operator = "";
+    getEqual();
   } else if (btnClass === "operator" && operator) {
     getOperator();
     display.value = operate(num1, num2, operator);
@@ -72,6 +65,21 @@ function updateDisplay(btn, btnValue, btnClass) {
   } else {
     display.value += btnValue;
   }
+}
+
+function getReset() {
+  display.value = "0";
+  num1 = "";
+  num2 = "";
+  operator = "";
+}
+
+function getEqual() {
+  getOperator();
+  display.value = operate(num1, num2, operator);
+  num1 = "";
+  num2 = "";
+  operator = "";
 }
 
 function getOperator() {
