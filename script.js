@@ -41,7 +41,10 @@ function updateDisplay(btnValue, btnClass) {
   if (btnClass === "point") {
     point.disabled = true;
   }
-  if (btnClass === "reset") {
+
+  if (btnClass === "delete") {
+    getDeleteValue();
+  } else if (btnClass === "reset") {
     getReset();
   } else if (btnClass === "equals") {
     getEqual();
@@ -91,6 +94,13 @@ function getEqual() {
   num2 = "";
   operator = "";
   point.disabled = false;
+}
+
+function getDeleteValue() {
+  const displayValue = display.value;
+  const newValue = displayValue.slice(0, -1);
+  display.value = "";
+  display.value += newValue;
 }
 
 function getOperator() {
