@@ -48,28 +48,24 @@ function updateDisplay(btnValue, btnClass) {
   } else if (btnClass === "operator" && operator) {
     getOperator();
     display.value = operate(num1, num2, operator);
-    // num1 = parseFloat(display.value);
     num1 = display.value;
     num2 = "";
     operator = btnValue;
     point.disabled = false;
+  } else if (num2) {
+    display.value += btnValue;
+    num2 = display.value;
   } else if (btnClass === "point" && operator) {
     display.value = "";
     display.value += btnValue;
     num2 = display.value;
   } else if (btnClass === "operator") {
     operator = btnValue;
-    // num1 = parseFloat(display.value);
     num1 = display.value;
     point.disabled = false;
-  } else if (num2) {
-    display.value += btnValue;
-    // num2 = parseFloat(display.value);
-    num2 = display.value;
   } else if (operator) {
     display.value = "";
     display.value += btnValue;
-    // num2 = parseFloat(display.value);
     num2 = display.value;
   } else if (!num1) {
     display.value = "";
