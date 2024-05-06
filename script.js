@@ -3,6 +3,7 @@ let num2;
 let operator;
 const btns = document.querySelectorAll(".buttons > *");
 const display = document.querySelector("#display");
+const point = document.querySelector(".point");
 display.value = "0";
 
 function add(num1, num2) {
@@ -38,6 +39,9 @@ btns.forEach((btn) => {
 });
 
 function updateDisplay(btn, btnValue, btnClass) {
+  if (btnClass === "point") {
+    btn.disabled = true;
+  }
   if (btnClass === "reset") {
     getReset();
   } else if (btnClass === "equals") {
