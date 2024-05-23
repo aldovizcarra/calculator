@@ -12,6 +12,7 @@ body {
   place-content: center;
   font-family: "League Spartan", sans-serif;
   background-color: #f0f0f0;
+  gap: 1rem;
 }
 
 button {
@@ -107,6 +108,15 @@ input {
   background-color: #ce3e34;
   box-shadow: 0 3px 0 0 #882b27;
   transition: all 0.2s ease-in-out;
+}
+
+.attribution {
+  text-align: center;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #ce3e34;
 }
 
 .equals:active {
